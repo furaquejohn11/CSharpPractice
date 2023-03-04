@@ -1,0 +1,15 @@
+/workspaces/CSharpPractice/GithubCsharp/bin/Debug/net7.0/GithubCsharp
+/workspaces/CSharpPractice/GithubCsharp/bin/Debug/net7.0/GithubCsharp.deps.json
+/workspaces/CSharpPractice/GithubCsharp/bin/Debug/net7.0/GithubCsharp.runtimeconfig.json
+/workspaces/CSharpPractice/GithubCsharp/bin/Debug/net7.0/GithubCsharp.dll
+/workspaces/CSharpPractice/GithubCsharp/bin/Debug/net7.0/GithubCsharp.pdb
+/workspaces/CSharpPractice/GithubCsharp/obj/Debug/net7.0/GithubCsharp.csproj.AssemblyReference.cache
+/workspaces/CSharpPractice/GithubCsharp/obj/Debug/net7.0/GithubCsharp.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/CSharpPractice/GithubCsharp/obj/Debug/net7.0/GithubCsharp.AssemblyInfoInputs.cache
+/workspaces/CSharpPractice/GithubCsharp/obj/Debug/net7.0/GithubCsharp.AssemblyInfo.cs
+/workspaces/CSharpPractice/GithubCsharp/obj/Debug/net7.0/GithubCsharp.csproj.CoreCompileInputs.cache
+/workspaces/CSharpPractice/GithubCsharp/obj/Debug/net7.0/GithubCsharp.dll
+/workspaces/CSharpPractice/GithubCsharp/obj/Debug/net7.0/refint/GithubCsharp.dll
+/workspaces/CSharpPractice/GithubCsharp/obj/Debug/net7.0/GithubCsharp.pdb
+/workspaces/CSharpPractice/GithubCsharp/obj/Debug/net7.0/GithubCsharp.genruntimeconfig.cache
+/workspaces/CSharpPractice/GithubCsharp/obj/Debug/net7.0/ref/GithubCsharp.dll
