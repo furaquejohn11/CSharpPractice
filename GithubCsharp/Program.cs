@@ -5,77 +5,66 @@ namespace GithubCsharp;
 class Program
 {
     static void Main(string[] args)
-    {
-        Console.Write("Enter Num1: ");
-        BigInteger num1 = BigInteger.Parse(Console.ReadLine());
-        Console.Write("Enter Num2: ");
-        BigInteger num2 = BigInteger.Parse(Console.ReadLine());
-        NumberToArray(num1, num2);
-    }
+        { 
+            Console.WriteLine("Make sure to type coefficient especially if it is 0 or 1!");
+            int[,] polynomials = new int[3 , 3];
+            Console.WriteLine("Enter first polynomial: "); 
+            Console.Write("Value of coefficent of x^2: ");
+            polynomials[0,0]  = int.Parse(Console.ReadLine());
 
-    static void NumberToArray(BigInteger num1, BigInteger num2)
-    {
-        int lengthNum1 = NumberLength(num1); 
-        int lengthNum2 = NumberLength(num2);
 
-        // Finding the max length for the max range of array.
-        int maxLength = Math.Max(lengthNum1, lengthNum2);
-        BigInteger[] arrNum1 = new BigInteger[maxLength];
-        BigInteger[] arrNum2 = new BigInteger[maxLength];
+            Console.Write("Value of coefficent of x: ");
+            polynomials[0,1]  = int.Parse(Console.ReadLine());
 
-        // Adding elements in array. Modulo to get the last number
-        // and /= to make the number smaller until it become 0.
-        for (int i = 0; i < lengthNum1; i++)
-        {
-            arrNum1[i] = num1 % 10;
-            num1 /= 10;
+            Console.Write("Value of last term : ");
+            polynomials[0,2]  = int.Parse(Console.ReadLine());
+
+
+            Console.WriteLine();
+
+            Console.WriteLine("Enter Second polynomial: "); 
+            Console.Write("Value of coefficent of x^2: ");
+            polynomials[1,0]  = int.Parse(Console.ReadLine());
+
+            Console.Write("Value of coefficent of x: ");
+            polynomials[1,1]  = int.Parse(Console.ReadLine());
+
+            Console.Write("Value of last term : ");
+            polynomials[1,2]  = int.Parse(Console.ReadLine());
+            
+            Console.WriteLine(Answer(polynomials));
+            
         }
+        static string Answer(int[,] polynomials)
+        {
+            int[] result = new int[3];
+            string[] variables = {"x^2", "x", ""};
+            string formatted = null;
 
-        for (int i = 0; i < lengthNum2; i++)
-        {
-            arrNum2[i] = num2 % 10;
-            num2 /= 10;
-        }
-        Console.WriteLine("Sum: " + AdditionOfArray(arrNum1, arrNum2, maxLength));       
-        
-    }
-    static BigInteger AdditionOfArray(BigInteger[] num1, BigInteger[] num2, int maxLength)
-    {
-        string sum = "";
-        BigInteger[] arrSum = new BigInteger[maxLength];
-        for (int i = 0; i < maxLength; i++)
-        {
-            // For carrying values. Use += to make sure all carry numbers will be added.
-            // int array default value is 0 so it is safe to use +=.
-            BigInteger total = num1[i] + num2[i];
-            // Check the size and position to make sure all carry numbers and index range are utilized.
-            if (total > 9 && i < maxLength - 1)
+            for (int i = 0; i < 3; i++)
             {
-                arrSum[i] += total % 10;
-                num1[i + 1]++;
+                result[i] = polynomials[0, i] + polynomials[1, i];
             }
-            else
-            {
-                arrSum[i] += total;
-            }
-        }
-        // Reversing the arrSum to print it in order.
-        for (int i = maxLength - 1; i >= 0; i--)
-        {
-            // You can also use += in concatenating string but make sure to use .ToString() method.
-            sum += arrSum[i].ToString();
-        }
-        return BigInteger.Parse(sum);
-    }
-    static int NumberLength(BigInteger num)
-    {
-        int count;
-        for (count = 0; num != 0; count++)
-        {
-            num /= 10;
-        }
-        return count;
-    }
 
+            for (int i = 0; i < 3; i++)
+            {
+                if (result[i] != 0)
+                {
+                    if (result[i] > 0 && i >= 1 && i < 3)
+                    {
+                        formatted += "+" + result[i].ToString() + variables[i];
+                    }
+                    else
+                    {
+                        formatted += result[i].ToString() + variables[i];
+                    }
+                    
+                }
+            }
+
+            return formatted.Replace("1x", "x");
+
+
+        }
     
 }
